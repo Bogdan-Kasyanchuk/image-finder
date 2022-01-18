@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+img {
+  display: block;
+}
+
+body {
+  background-image: linear-gradient(to right, #bbbbbb, #ffffff);
+}
+
+.container {
+  width: 1600px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}

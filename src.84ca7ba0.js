@@ -96,4 +96,4 @@ var t=arguments[3];function e(t){return(e="function"==typeof Symbol&&"symbol"==t
 },{"./MaterialIcons-Regular.eot":[["MaterialIcons-Regular.b2dfdb43.eot","j5gN"],"j5gN"],"./MaterialIcons-Regular.woff2":[["MaterialIcons-Regular.042e3246.woff2","TxNh"],"TxNh"],"./MaterialIcons-Regular.woff":[["MaterialIcons-Regular.cc4a9352.woff","BrWe"],"BrWe"],"./MaterialIcons-Regular.ttf":[["MaterialIcons-Regular.7f257eac.ttf","EElw"],"EElw"]}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/main.js"),require("material-design-icons/iconfont/material-icons.css"),require("simplelightbox/dist/simple-lightbox.min.css");
 },{"./sass/main.scss":"clu1","./js/main.js":"d6sW","material-design-icons/iconfont/material-icons.css":"Vl7d","simplelightbox/dist/simple-lightbox.min.css":"clu1"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-13-image-finder/src.f05bd3ab.js.map
+//# sourceMappingURL=/image-finder/src.84ca7ba0.js.map

@@ -1,0 +1,27 @@
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: initial;
+  overflow-y: scroll;
+}
+
+.backdrop--mod {
+  transition-property: opacity, visibility, transform;
+  transition-duration: 500ms;
+  transition-timing-function: $cubic;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop--mod.is-hidden {
+  transform: scale(1.1);
+}

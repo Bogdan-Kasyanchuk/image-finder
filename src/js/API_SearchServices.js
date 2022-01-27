@@ -1,8 +1,9 @@
-import refs from './refs.js';
 import axios from 'axios';
-import { notifySuccess, notifyFailure } from './notify.js';
+import refs from './refs';
+import { notifySuccess, notifyWarning, notifyFailure } from './notify';
 import imageCard from '../templates/imageCard.hbs';
-import { lightbox } from './fullSizeImage.js';
+import { lightbox } from './fullSizeImage';
+import { showLoader } from './loader';
 
 const { galleryEl } = refs;
 
@@ -30,15 +31,25 @@ export class API_SearchServices {
   }
 
   async getFetchImage() {
-    let url = `${this.BASE_URL}/?q=${this._searchQuery}&per_page=15&page=${this._page}&key=${this.KEY}`;
+    if (!this._searchQuery) {
+      notifyWarning('Enter the name of the picture or photo!');
+      return;
+    }
+    let url = `${this.BASE_URL}/?q=${this._searchQuery}&per_page=20&page=${this._page}&key=${this.KEY}`;
+    showLoader();
     try {
       const result = await axios.get(url);
-      if (!this._searchQuery || result.data.hits.length === 0) throw new Error();
+      showLoader();
+      if (result.data.hits.length === 0) {
+        notifyWarning('Sorry, there are no images matching your search query. Please try again!');
+        return;
+      }
       if (this._page === 1) notifySuccess();
       this.murkupImage(result.data.hits);
       lightbox.refresh();
     } catch (error) {
-      notifyFailure();
+      showLoader();
+      notifyFailure(error);
     }
   }
 

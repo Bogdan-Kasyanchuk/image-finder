@@ -1,4 +1,10 @@
+@import './utils/visually-hidden';
+@import './utils/variables';
 @import './base/commons';
-@import './components/searchForm';
-@import './components/imageGallery';
-@import './components/upButton';
+@import './base/container';
+@import './components/backdrop';
+@import './components/theme-switch';
+@import './components/loader';
+@import './components/search-form';
+@import './components/image-gallery';
+@import './components/up-button';

@@ -1,7 +1,12 @@
-import { searchImageServices } from './main';
+import refs from './refs.js';
+import { searchImageServices } from './searchImage';
 import { lightbox } from './fullSizeImage.js';
 
-export default new IntersectionObserver(onEntry, { rootMargin: '400px' });
+const { watchingEL } = refs;
+
+const observer = new IntersectionObserver(onEntry, { rootMargin: '400px' });
+
+observer.observe(watchingEL);
 
 let query;
 

@@ -3,18 +3,26 @@
 
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="./favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>image-finder</title>
+  <title>Image-finder</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <div class="container">
-    <include src="./partials/_searchForm.html"></include>
-    <include src="./partials/_gallery.html"></include>
+  <div class="toolbar">
+    <include src="./partials/theme-switch.html"></include>
   </div>
+  <div class="container">
+    <include src="./partials/search-form.html"></include>
+    <include src="./partials/gallery.html"></include>
+  </div>
+  <include src="./partials/loader.html"></include>
   <div class="watching"></div>
-  <button class="up-button" type="button">UP</button>
+  <include src="./partials/button-up.html"></include>
   <script src="./index.js"></script>
 </body>
 

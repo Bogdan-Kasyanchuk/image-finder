@@ -1,7 +1,5 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -15,12 +13,25 @@ img {
 }
 
 body {
-  background-image: linear-gradient(to right, #bbbbbb, #ffffff);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
+  // background-color: #6e6e6e;
+  background-image: url('https://www.transparenttextures.com/patterns/inspiration-geometry.png');
+  transition: color 150ms $cubic, background-color 150ms $cubic;
 }
 
-.container {
-  width: 1600px;
-  padding: 20px;
-  margin-left: auto;
-  margin-right: auto;
+body.light-theme {
+  background-color: #fff;
+  color: #333333;
+}
+
+body.dark-theme {
+  background-color: #333333;
+  color: #fff;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 24px;
 }

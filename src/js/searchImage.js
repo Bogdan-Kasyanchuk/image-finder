@@ -1,9 +1,13 @@
 import refs from './refs.js';
-import { searchImageServices } from './main';
+import { API_SearchServices } from './API_SearchServices.js';
 
-const { formEl } = refs;
+const { formEl, clearButtonEl } = refs;
 
-export default function (event) {
+export const searchImageServices = new API_SearchServices();
+
+formEl.addEventListener('submit', searchImage);
+
+function searchImage(event) {
   event.preventDefault();
   searchImageServices.searchQuery = event.target.elements.query.value;
   searchImageServices.resetPage();
@@ -11,3 +15,7 @@ export default function (event) {
   searchImageServices.getFetchImage();
   formEl.reset();
 }
+
+clearButtonEl.addEventListener('click', () => {
+  formEl.reset();
+});

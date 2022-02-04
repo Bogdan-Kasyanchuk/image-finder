@@ -101,6 +101,6 @@ var t=arguments[3];function e(t){return(e="function"==typeof Symbol&&"symbol"==t
 },{"./refs":"VyiV","./searchImage":"AXkL","./fullSizeImage":"acz9"}],"d6sW":[function(require,module,exports) {
 "use strict";require("./themeSwitch"),require("./upButton"),require("./loader"),require("./notify"),require("./API_SearchServices"),require("./searchImage"),require("./fullSizeImage"),require("./infiniteScroll");
 },{"./themeSwitch":"UUu7","./upButton":"FT6E","./loader":"vQE2","./notify":"Kazp","./API_SearchServices":"FQNG","./searchImage":"AXkL","./fullSizeImage":"acz9","./infiniteScroll":"ceWo"}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss"),require("material-design-icons/iconfont/material-icons.css"),require("./js/main.js"),require("simplelightbox/src/simple-lightbox.scss");
-},{"./sass/main.scss":"clu1","material-design-icons/iconfont/material-icons.css":"Vl7d","./js/main.js":"d6sW","simplelightbox/src/simple-lightbox.scss":"clu1"}]},{},["Focm"], null)
-//# sourceMappingURL=/image-finder/src.129bf367.js.map
+"use strict";require("./sass/main.scss"),require("material-design-icons/iconfont/material-icons.css"),require("./js/main.js"),require("./sass/simple-lightbox.scss");
+},{"./sass/main.scss":"clu1","material-design-icons/iconfont/material-icons.css":"Vl7d","./js/main.js":"d6sW","./sass/simple-lightbox.scss":"clu1"}]},{},["Focm"], null)
+//# sourceMappingURL=/image-finder/src.409c3f38.js.map

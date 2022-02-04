@@ -6,14 +6,17 @@
   transition-duration: $time;
   transition-timing-function: $cubic;
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     box-shadow: $second-box-shadow;
     transform: scale(0.98);
+    outline: none;
   }
 }
 
 .photo-card__full {
   height: 300px;
+  outline: none;
 }
 
 .photo-card__img {

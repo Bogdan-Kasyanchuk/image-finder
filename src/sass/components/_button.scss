@@ -10,7 +10,8 @@
   transition-duration: $time;
   transition-timing-function: $cubic;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     color: $first-color;
     background-color: $first-acent-color;
     border-color: $first-acent-color;

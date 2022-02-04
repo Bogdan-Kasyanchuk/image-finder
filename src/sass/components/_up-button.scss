@@ -12,7 +12,8 @@
   transition-duration: $time;
   transition-timing-function: $cubic;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background-color: $first-acent-color;
     border-color: $first-acent-color;
     box-shadow: $first-box-shadow;
@@ -34,12 +35,14 @@ body.dark-theme .up-button {
   background-color: $first-color;
   border-color: $first-color;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background-color: $first-acent-color;
     border-color: $first-acent-color;
   }
 
-  &:hover > .up-button__icon {
+  &:hover > .up-button__icon,
+  &:focus-visible > .up-button__icon {
     fill: $first-color;
   }
 }

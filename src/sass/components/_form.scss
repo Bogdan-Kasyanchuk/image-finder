@@ -1,0 +1,42 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  justify-content: center;
+  grid-column-gap: 20px;
+
+  @media screen and (max-width: 639px) {
+    grid-template-columns: 1fr 9fr 1fr;
+    grid-column-gap: 14px;
+  }
+
+  @media screen and (min-width: $min-desktop) {
+    grid-template-columns: 1fr 4fr 1fr;
+  }
+}
+
+.form__search-input {
+  min-width: 200px;
+  padding: 4px 8px;
+  font-size: 22px;
+  color: $first-acent-color;
+  background-color: $first-color;
+  border: 2px solid $first-color;
+  border-radius: 5px;
+  transition-property: color, border-color, box-shadow;
+  transition-duration: $time;
+  transition-timing-function: $cubic;
+
+  &::placeholder {
+    color: rgba(128, 128, 128, 0.5);
+  }
+
+  &:focus {
+    border-color: $first-acent-color;
+    box-shadow: $first-box-shadow;
+    outline: none;
+
+    &::placeholder {
+      color: rgba(212, 0, 0, 0.5);
+    }
+  }
+}

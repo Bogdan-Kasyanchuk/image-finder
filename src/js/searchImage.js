@@ -1,18 +1,18 @@
-import refs from './refs.js';
-import { API_SearchServices } from './API_SearchServices.js';
+import refs from './refs';
+import { API_SearchServices } from './API_SearchServices';
 
 const { formEl, clearButtonEl } = refs;
 
-export const searchImageServices = new API_SearchServices();
+export const getImageServices = new API_SearchServices();
 
-formEl.addEventListener('submit', searchImage);
+formEl.addEventListener('submit', getImage);
 
-function searchImage(event) {
+function getImage(event) {
   event.preventDefault();
-  searchImageServices.searchQuery = event.target.elements.query.value;
-  searchImageServices.resetPage();
-  searchImageServices.clearMurkup();
-  searchImageServices.getFetchImage();
+  getImageServices.searchQuery = event.target.elements.query.value;
+  getImageServices.resetPage();
+  getImageServices.clearMurkup();
+  getImageServices.getFetchData();
   formEl.reset();
 }
 

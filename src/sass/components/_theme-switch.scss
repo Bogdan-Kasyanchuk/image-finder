@@ -3,23 +3,39 @@
   align-items: center;
 }
 
-.theme-switch__icon {
-  color: currentColor;
-  height: 24px;
+.theme-switch__icon-sun,
+.theme-switch__icon-moon {
   width: 24px;
-  margin-right: 8px;
-  margin-left: 8px;
+  height: 24px;
+  transition-property: color;
+  transition-duration: $time;
+  transition-timing-function: $cubic;
+}
+
+.theme-switch__icon-moon {
+  color: $second-color;
+}
+
+body.dark-theme .theme-switch__icon-moon,
+.theme-switch__icon-sun {
+  color: $first-acent-color;
+}
+
+body.dark-theme .theme-switch__icon-sun {
+  color: $first-color;
 }
 
 .theme-switch__control {
+  position: relative;
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  position: relative;
-  width: 64px;
-  height: 32px;
-  border-radius: 50em;
+  margin-right: 8px;
+  margin-left: 8px;
+  width: 60px;
+  height: 30px;
   padding: 3px 0;
+  border-radius: 15px;
 }
 
 .theme-switch__toggle {
@@ -27,23 +43,18 @@
   left: 0;
   top: 0;
   margin: 0;
+  width: 0;
+  height: 0;
   padding: 0;
   opacity: 0;
-  height: 0;
-  width: 0;
   pointer-events: none;
 
   &:checked + .theme-switch__track {
-    background-color: #d3d3d4;
+    background-color: $first-color;
   }
 
   &:checked ~ .theme-switch__marker {
-    transform: translateX(35px);
-  }
-
-  &:focus + .theme-switch__track,
-  &:active + .theme-switch__track {
-    box-shadow: 0 0 0 3px #2196f3;
+    transform: translateX(33px);
   }
 }
 
@@ -54,22 +65,25 @@
   width: 100%;
   height: 100%;
   color: transparent;
-  user-select: none;
-  background-color: #333;
+  background-color: $second-color;
   border-radius: inherit;
+  user-select: none;
   z-index: 1;
-  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: $time;
+  transition-timing-function: $cubic;
 }
 
 .theme-switch__marker {
   position: relative;
-  background-color: #fff;
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
+  background-color: $first-acent-color;
   border-radius: 50%;
   z-index: 2;
   pointer-events: none;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-  transform: translateX(3px);
-  transition: transform 250ms $cubic;
+  transform: translateX(4px);
+  transition-property: transform;
+  transition-duration: $time;
+  transition-timing-function: $cubic;
 }

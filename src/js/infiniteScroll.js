@@ -1,23 +1,23 @@
-import refs from './refs.js';
-import { searchImageServices } from './searchImage';
-import { lightbox } from './fullSizeImage.js';
+import refs from './refs';
+import { getImageServices } from './searchImage';
+import { lightbox } from './fullSizeImage';
 
 const { watchingEL } = refs;
 
-const observer = new IntersectionObserver(onEntry, { rootMargin: '400px' });
+const observer = new IntersectionObserver(onEntry, { rootMargin: '200px' });
 
 observer.observe(watchingEL);
 
 let query;
 
 function onEntry(entries) {
-  if (searchImageServices.searchQuery === query) {
+  if (getImageServices.searchQuery === query) {
     entries.forEach(entry => {
-      if (entry.isIntersecting && searchImageServices.searchQuery !== '') {
-        searchImageServices.getLoadMore();
+      if (entry.isIntersecting && getImageServices.searchQuery !== '') {
+        getImageServices.getMore();
         lightbox.refresh();
       }
     });
   }
-  query = searchImageServices.searchQuery;
+  query = getImageServices.searchQuery;
 }

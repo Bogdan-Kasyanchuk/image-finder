@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $second-color;
+  background-color: $first-color;
+  transition-property: color, background-color;
+  transition-duration: $time;
+  transition-timing-function: $cubic;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+picture,
+img {
+  display: block;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+button,
+label,
+input {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+body.light-theme {
+  color: $second-color;
+  background-color: $first-color;
+}
+
+body.dark-theme {
+  color: $first-color;
+  background-color: $second-color;
+}

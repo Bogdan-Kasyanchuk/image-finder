@@ -6,23 +6,25 @@
   <link rel="icon" href="./favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Image-finder</title>
+  <title>Images finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <div class="toolbar">
+  <header class="header">
+    <include src="./partials/logo.html"></include>
+    <include src="./partials/form.html"></include>
     <include src="./partials/theme-switch.html"></include>
-  </div>
-  <div class="container">
-    <include src="./partials/search-form.html"></include>
-    <include src="./partials/gallery.html"></include>
-  </div>
-  <include src="./partials/loader.html"></include>
+  </header>
+  <include src="./partials/gallery.html"></include>
   <div class="watching"></div>
-  <include src="./partials/button-up.html"></include>
+  <include src="./partials/loader.html"></include>
+  <include src="./partials/up-button.html"></include>
   <script src="./index.js"></script>
 </body>
 

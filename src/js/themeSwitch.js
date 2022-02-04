@@ -1,4 +1,4 @@
-import refs from './refs.js';
+import refs from './refs';
 
 const { bodyEl, themeSwitchEl } = refs;
 
@@ -9,16 +9,16 @@ const theme = {
 
 const { LIGHT, DARK } = theme;
 
-startTheme();
-
-themeSwitchEl.addEventListener('change', themeSwitch);
-
 function startTheme() {
   if (localStorage.getItem('theme') === DARK) {
     bodyEl.classList.add(DARK);
     themeSwitchEl.checked = true;
   }
 }
+
+startTheme();
+
+themeSwitchEl.addEventListener('change', themeSwitch);
 
 function themeSwitch(event) {
   if (event.target.checked) {

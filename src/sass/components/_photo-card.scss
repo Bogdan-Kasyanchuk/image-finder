@@ -1,0 +1,45 @@
+.photo-card {
+  border: 1px solid $second-acent-color;
+  border-radius: 5px;
+  overflow: hidden;
+  transition-property: box-shadow, transform;
+  transition-duration: $time;
+  transition-timing-function: $cubic;
+
+  &:hover {
+    box-shadow: $second-box-shadow;
+    transform: scale(0.98);
+  }
+}
+
+.photo-card__full {
+  height: 300px;
+}
+
+.photo-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-card__stats-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 16px;
+  padding: 6px;
+  border-top: 1px solid $second-acent-color;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.photo-card__stats-item {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  grid-row-gap: 4px;
+}
+
+.photo-card__stats-text {
+  font-size: 16px;
+}

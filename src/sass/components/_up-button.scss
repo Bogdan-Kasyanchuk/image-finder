@@ -2,17 +2,48 @@
   position: fixed;
   right: 20px;
   bottom: 20px;
-
   display: block;
-  padding: 5px 10px;
-  font-size: 20px;
-  border: 2px solid rgb(128, 128, 128);
+  padding: 2px 6px;
+  line-height: 1;
+  background-color: $second-color;
+  border: 2px solid $second-color;
   border-radius: 5px;
-  cursor: pointer;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: $time;
+  transition-timing-function: $cubic;
 
   &:hover {
-    color: rgb(255, 0, 0);
-    border-color: rgb(255, 0, 0);
+    background-color: $first-acent-color;
+    border-color: $first-acent-color;
+    box-shadow: $first-box-shadow;
     outline: none;
   }
+}
+
+.up-button__icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  fill: $first-color;
+  transition-property: fill;
+  transition-duration: $time;
+  transition-timing-function: $cubic;
+}
+
+body.dark-theme .up-button {
+  background-color: $first-color;
+  border-color: $first-color;
+
+  &:hover {
+    background-color: $first-acent-color;
+    border-color: $first-acent-color;
+  }
+
+  &:hover > .up-button__icon {
+    fill: $first-color;
+  }
+}
+
+body.dark-theme .up-button__icon {
+  fill: $second-color;
 }

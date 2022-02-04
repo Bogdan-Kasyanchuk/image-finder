@@ -1,19 +1,21 @@
 import axios from 'axios';
 import refs from './refs';
 import { notifySuccess, notifyWarning, notifyFailure } from './notify';
+import { showLoader } from './loader';
 import imageCard from '../templates/imageCard.hbs';
 import { lightbox } from './fullSizeImage';
-import { showLoader } from './loader';
 
-const { galleryEl } = refs;
+const { gallery__wrapperEl } = refs;
 
 export class API_SearchServices {
+  #totalHits;
+
   constructor() {
     this.KEY = '23972474-59b971b2a70ac3d99136f23c2';
     this.BASE_URL = 'https://pixabay.com/api';
     this._page = 1;
     this._searchQuery = '';
-    this.buttonLoadMore = null;
+    this.#totalHits = null;
   }
 
   get page() {
@@ -30,7 +32,7 @@ export class API_SearchServices {
     return (this._searchQuery = value.trim());
   }
 
-  async getFetchImage() {
+  async getFetchData() {
     if (!this._searchQuery) {
       notifyWarning('Enter the name of the picture or photo!');
       return;
@@ -40,12 +42,13 @@ export class API_SearchServices {
     try {
       const result = await axios.get(url);
       showLoader();
-      if (result.data.hits.length === 0) {
+      if (!result.data.hits.length) {
         notifyWarning('Sorry, there are no images matching your search query. Please try again!');
         return;
       }
       if (this._page === 1) notifySuccess();
-      this.murkupImage(result.data.hits);
+      this.#totalHits = result.data.totalHits;
+      this.murkupData(result.data.hits);
       lightbox.refresh();
     } catch (error) {
       showLoader();
@@ -53,8 +56,8 @@ export class API_SearchServices {
     }
   }
 
-  murkupImage(data) {
-    galleryEl.insertAdjacentHTML('beforeend', imageCard(data));
+  murkupData(data) {
+    gallery__wrapperEl.insertAdjacentHTML('beforeend', imageCard(data));
   }
 
   resetPage() {
@@ -62,11 +65,16 @@ export class API_SearchServices {
   }
 
   clearMurkup() {
-    galleryEl.innerHTML = '';
+    if (!this._searchQuery) return;
+    gallery__wrapperEl.innerHTML = '';
   }
 
-  getLoadMore() {
+  getMore() {
+    if (Math.ceil(this.#totalHits / 20) < this._page + 1) {
+      notifyWarning('Sorry, there are no more images to upload!');
+      return;
+    }
     this.page = 1;
-    this.getFetchImage();
+    this.getFetchData();
   }
 }

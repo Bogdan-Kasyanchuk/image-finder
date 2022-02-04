@@ -1,0 +1,40 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  background-color: $first-color;
+  border: 2px solid $first-color;
+  border-radius: 5px;
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: $time;
+  transition-timing-function: $cubic;
+
+  &:hover {
+    color: $first-color;
+    background-color: $first-acent-color;
+    border-color: $first-acent-color;
+    box-shadow: $first-box-shadow;
+    outline: none;
+  }
+}
+
+.button__text {
+  display: none;
+
+  @media screen and (min-width: $min-desktop) {
+    display: block;
+    font-size: 22px;
+  }
+}
+
+.button__icon-search,
+.button__icon-clear {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+}
+
+.button__icon-clear {
+  height: 24px;
+}

@@ -1,6 +1,6 @@
 import SimpleLightbox from 'simplelightbox';
 
-export let lightbox = new SimpleLightbox('.gallery a', {
+export let lightbox = new SimpleLightbox('.gallery__wrapper a', {
   captionsData: 'alt',
-  captionDelay: '250',
+  captionDelay: '100',
 });

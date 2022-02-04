@@ -1,8 +1,7 @@
 import refs from './refs';
 
-const { loaderBackdropEl, bodyEl } = refs;
+const { loaderEl } = refs;
 
 export function showLoader() {
-  loaderBackdropEl.classList.toggle('is-hidden');
-  bodyEl.classList.toggle('backdrop-open');
+  loaderEl.classList.toggle('visually-hidden');
 }
